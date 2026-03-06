@@ -12,3 +12,14 @@ It is usually used to process mathematical problems, computer graphics or data p
 * Editing photos
 * Moving an object on a 2d plate
 
+## Part 2 - Algorithm : Tim Sort
+Tim sort use 2 algorithms, insertion sort inside a run and merge sort for multiple runs.
+### Step 1 : Identify runs
+- Check the whole array and combine a sequence in either ascending or descending order, and convert into ascending order if it is descending
+- Add how many number in each sequence
+- Usually use minimum 32 to 64 numbers as 1 run, and keep repeating to find how many runs in whole array
+### Step 2 : Insertion sort inside each run
+- After finding how many runs, we also know how many sequences are in 1 run, and use insertion sort to sort the first 2 sequences
+- After sorting all sequences in 1 run by insertion sort, keep sorting in other run until all run are sorted
+### Step 3 : Merge sort for each run
+- 
