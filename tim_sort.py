@@ -73,14 +73,14 @@ def tim_sort(arr):
         right = run2_start + length2 - 1
         merge(arr, run1_start, mid, right)
 
-        runs.insert(0, (l1st1, length1 + length2))
+        runs.insert(0, (run1_start, length1 + length2))
 
     return arr
 
 def calc_min_run(n):
-    r=0
+    r = 0
     while n >= 64:
-        r = 1 if r % 2 == 0 else r
+        r = 1 if n % 2 == 1 else r
         n = n//2
     return n + r
 
@@ -135,4 +135,5 @@ def gallop(key, arr, start, end):
         else:
             right = mid - 1
     return left
+
 
