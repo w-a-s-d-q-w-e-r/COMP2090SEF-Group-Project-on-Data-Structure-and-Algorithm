@@ -106,7 +106,7 @@ def binary_search(arr, left, right, key):
             right = mid - 1
     return left
 
-def binary_insertion_sort(arr, left, right):            #faster than insertion_sort() , both sorting can compare time used
+def binary_insertion_sort(arr, left, right):            #Faster than insertion_sort() , both sorting can used to compare time used
     for i in range(left + 1, right + 1):
         key = arr[i]
         pos = binary_search(arr, left, i - 1, key)
@@ -119,6 +119,10 @@ def binary_insertion_sort(arr, left, right):            #faster than insertion_s
 def gallop(key, arr, start, end):
     if start > end:
         return start
+
+    if arr[start] > key:                                #If the first element is already greater than key, return start
+        return start
+
     last = start
     step = 1
     pos = start
@@ -126,7 +130,9 @@ def gallop(key, arr, start, end):
         last = pos
         pos = start + step
         step *= 2
-    left = last + 1
+    
+    # Binary search in [last, min(pos, end)]
+    left = last
     right = min(pos, end)
     while left <= right:
         mid = (left + right) // 2
@@ -135,5 +141,14 @@ def gallop(key, arr, start, end):
         else:
             right = mid - 1
     return left
+
+    """ Create a random list and do code testing """
+import random
+number = list(range(1,1000))
+sample = random.sample(number, 200)
+print(sample)
+print(sorted(sample))
+print(tim_sort(sample))
+print(sorted(sample) == tim_sort(sample)) 
 
 
