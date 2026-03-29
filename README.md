@@ -1,5 +1,5 @@
 # Task 2 – Self-Study on a New Data Structure and a New Algorithm
-
+                          
 **Course**: COMP2090SEF  
 **Topic**: Data Structures, Algorithms and Problem Solving  
 
@@ -10,10 +10,14 @@
 A Trie is a tree-based data structure used to store a dynamic set of strings efficiently. Each node represents a single character, and paths from root to a marked node represent valid words.
 
 **Main operations**:
-- insert(word)  
+- insert(word) -> add word to wordlist
 - search(word) → check exact match  
-- startsWith(prefix) → check if any word begins with given prefix  
-- (optional) delete(word), collect all words with prefix
+- starts_with(prefix) → check if any word begins with given prefix
+- delete(word) -> remove the word from the wordlist
+- words_with_prefix(prefix) -> find the words starting with a specific prefix
+- word_library -> check the wordlist
+- autocomplete(prefix) -> give suggestions on word starting with a specific prefix, ordered base on the searching frequency
+- spell_check(word) -> give suggestions on word that search word is not appear but similar to the words in wordlist, ordered base on the searching frequency
 
 **Key properties**:
 - Abstraction: Users interact only with high-level string operations; internal node structure and traversal are hidden.
