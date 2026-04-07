@@ -15,9 +15,9 @@ A Trie is a tree-based data structure used to store a dynamic set of strings eff
 - starts_with(prefix) → check if any word begins with given prefix
 - delete(word) -> remove the word from the wordlist
 - words_with_prefix(prefix) -> find the words starting with a specific prefix
-- word_library -> check the wordlist
+- word_library() -> check the wordlist
 - autocomplete(prefix) -> give suggestions on word starting with a specific prefix, ordered base on the searching frequency
-- spell_check(word) -> give suggestions on word that search word is not appear but similar to the words in wordlist, ordered base on the searching frequency
+- spell_check(word) -> give suggestions on word that searched word is not appear but similar to the words in wordlist, ordered base on the searching frequency
 
 **Key properties**:
 - Abstraction: Users interact only with high-level string operations; internal node structure and traversal are hidden.
