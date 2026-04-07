@@ -39,6 +39,9 @@ A Trie is a tree-based data structure used to store a dynamic set of strings eff
 
 Tim Sort is a hybrid stable sorting algorithm that combines **insertion sort** (on small runs) with **merge sort** (on larger runs). It is the default sorting algorithm in Python (`list.sort()` and `sorted()`), Java, Android, and many other standard libraries.
 
+### Basic Operation *** :
+Use `tim_sort(array)` to sort a single array
+
 ### High-level steps
 1. **Identify natural runs** — scan the array to find already sorted segments ("runs") of length at least `min_run` (typically calculated dynamically, often around 32–64).
 2. **Reduce comparison** - Use the sorted segments to reduce binary search for sorting remaining items
