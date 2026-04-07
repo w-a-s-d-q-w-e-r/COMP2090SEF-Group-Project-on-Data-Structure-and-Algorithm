@@ -1,6 +1,6 @@
 min_gallop = 4
 
-def insertion_sort(arr, left, right):
+def insertion_sort(arr, left, right):                # Not used since it is less efficient than binary insertion sort, but basic operation for tim sort
     for i in range(left + 1, right + 1):
         key = arr[i]
         j = i - 1
