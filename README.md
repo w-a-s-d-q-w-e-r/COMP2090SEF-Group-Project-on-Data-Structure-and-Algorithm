@@ -41,9 +41,10 @@ Tim Sort is a hybrid stable sorting algorithm that combines **insertion sort** (
 
 ### High-level steps
 1. **Identify natural runs** — scan the array to find already sorted segments ("runs") of length at least `min_run` (typically calculated dynamically, often around 32–64).
-2. **Sort small runs with insertion sort** — insertion sort is very efficient on small or nearly sorted data.
-3. **Merge runs using merge sort** — progressively merge adjacent runs using a modified merge that exploits existing order (galloping mode in real implementations).
-4. **Adaptive merging** — use techniques like galloping to skip unnecessary comparisons when one run is much larger.
+2. **Reduce comparison** - Use the sorted segments to reduce binary search for sorting remaining items
+3. **Use binary insertion sort for small or nearly sorted run** — binary insertion sort is more efficient than insertion sort (*O(n log n) vs O(n^2)*)  on small or nearly sorted data.
+4. **Merge runs using merge sort** — progressively merge adjacent runs using a modified merge that exploits existing order (galloping mode in real implementations).
+5. **Adaptive merging** — use galloping to skip unnecessary comparisons when one run is much larger.
 
 ### Time & Space Complexity
 - Best case: O(n) — when array is already sorted or has long runs  
