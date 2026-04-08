@@ -35,7 +35,10 @@ class Trie:
             return len(node.children) == 0
         char = word[index]
         if char not in node.children:
-            return False
+            if len(word) > 1:
+                    return self.spell_check(word)
+            else:
+                return False
         child = node.children[char]
         should_delete_child = self._delete(child, word, index+1)
         if should_delete_child:
