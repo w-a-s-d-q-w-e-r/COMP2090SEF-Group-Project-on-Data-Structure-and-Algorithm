@@ -71,7 +71,7 @@ A Trie is a tree-based data structure used to store a dynamic set of strings eff
 - `insert(123)`    *Number can't apply to `.lower()` function*
 - `search("hot")`
 - -> Not Found
-- -> execute `spell_check("ha")`
+- -> execute `spell_check("hot")`
 - -> Not Found, return `False`
 - `delete("hope")`
 - -> Not Found
