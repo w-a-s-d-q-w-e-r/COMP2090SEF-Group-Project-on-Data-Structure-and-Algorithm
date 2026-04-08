@@ -112,10 +112,10 @@ Use `tim_sort(array)` to sort a single array
 - Stable sorting where order of equal elements matters (e.g., database records)
 
 # How To Use :
-`import random`
-`number = list(range(1,1000))`
-`sample = random.sample(number, 200)`   *Generate a random list*
-`print(sample)`  *For user to see the number list*
-`print(sorted(sample))`   *See the sorted list sorted by python default function*
-`print(tim_sort(sample))`   *See the sorted list sorted by self-defined tim sort*
-`print(sorted(sample) == tim_sort(sample))`   * See if self-defined tim sort successfully sort the list*
+-`import random`
+-`number = list(range(1,1000))`
+-`sample = random.sample(number, 200)`   *Generate a random list*
+-`print(sample)`  *For user to see the number list*
+-`print(sorted(sample))`   *See the sorted list sorted by python default function*
+-`print(tim_sort(sample))`   *See the sorted list sorted by self-defined tim sort*
+-`print(sorted(sample) == tim_sort(sample))`   * See if self-defined tim sort successfully sort the list*
