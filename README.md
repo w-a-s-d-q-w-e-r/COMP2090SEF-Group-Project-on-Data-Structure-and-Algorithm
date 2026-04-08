@@ -111,8 +111,8 @@ Use `tim_sort(array)` to sort a single array
 # How To Use :
 - `import random`
 - `number = list(range(1,1000))`
-- `sample = random.sample(number, 200)`   *Generate a random list*
-- `print(sample)`  *For user to see the number list*
-- `print(sorted(sample))`   *See the sorted list sorted by python default function*
-- `print(tim_sort(sample))`   *See the sorted list sorted by self-defined tim sort*
-- `print(sorted(sample) == tim_sort(sample))`   *See if self-defined tim sort successfully sort the list*
+- `sample = random.sample(number, 200)`   1. *Generate a random list*
+- `print(sample)`  2. *For user to see the number list*
+- `print(sorted(sample))`   3. *See the sorted list sorted by python default function*
+- `print(tim_sort(sample))`  4. *See the sorted list sorted by self-defined tim sort*
+- `print(sorted(sample) == tim_sort(sample))`   5. *See if self-defined tim sort successfully sort the list*
