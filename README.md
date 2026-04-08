@@ -38,7 +38,7 @@ A Trie is a tree-based data structure used to store a dynamic set of strings eff
 ### Success cases:
 - `insert("Horse")` 
 - `self.wordlist`
-- `{"horse" : 0}
+- `{"horse" : 0}`
 - `self.root`
 -  root.children = `"{h" : <node_h>}`            `root.is_end_of_word` is `False`
 - -> node_h.children = `{"o" : <node_ho>}`         `node_h.is_end_of_word` is `False`
