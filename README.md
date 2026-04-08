@@ -67,7 +67,7 @@ A Trie is a tree-based data structure used to store a dynamic set of strings eff
 - `spell_check("house")
 - -> scan wordlist, found 1 character difference between "horse" and "house"
 - -> suggest word "horse"
-### Wrong cases:  (Assume there is the word "horse")
+### Fail cases:  (Assume there is the word "horse")
 - `insert(123)`    *Number can't apply to `.lower()` function*
 - `search("hot")`
 - -> Not Found
@@ -111,4 +111,11 @@ Use `tim_sort(array)` to sort a single array
 - Sorting large datasets with natural runs (logs, timestamps, partially pre-sorted data)
 - Stable sorting where order of equal elements matters (e.g., database records)
 
-
+# How To Use :
+`import random`
+`number = list(range(1,1000))`
+`sample = random.sample(number, 200)`   *Generate a random list*
+`print(sample)`  *For user to see the number list*
+`print(sorted(sample))`   *See the sorted list sorted by python default function*
+`print(tim_sort(sample))`   *See the sorted list sorted by self-defined tim sort*
+`print(sorted(sample) == tim_sort(sample))`   * See if self-defined tim sort successfully sort the list*
