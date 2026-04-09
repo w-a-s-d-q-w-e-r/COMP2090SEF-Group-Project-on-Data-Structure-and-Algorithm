@@ -57,6 +57,7 @@ class Trie:
             node = node.children[char]
         if node.is_end_of_word:
             self.word_list[word] += 1
+            print(True)
         return node.is_end_of_word
 
     def starts_with(self, prefix):
@@ -110,6 +111,9 @@ class Trie:
         word = word.lower()
         matches = []
         for w in self.word_list:
+            if w == word:
+                print("The word", word,"is in the wordlist already")
+                return
             if abs(len(w) - len(word)) == 1:
                 if self._difference_in_word_length(word, w):
                     if w not in matches:
@@ -122,7 +126,7 @@ class Trie:
                     if w not in matches:
                         matches.append(w)
         if not matches:
-            print(None)
+            print("None")
             return None
         best_word = self._suggested_wording(matches)
         print("Do you want to search : ")
@@ -199,42 +203,74 @@ class Trie:
 #starts_with checks path only (useful for autocomplete).
 #delete remove the nodes that are end characters
 #word_with_prefix gives the words follow a specific prefix
+#autocomplete suggests words based on prefix and frequency.
+#spell_check checks for words with 1 character difference, 1 character order difference, and 1 word length difference.
 
 
-sample = Trie()
+sample= Trie()
 sample.insert("Can")
 sample.insert("Car")
 sample.insert("Cat")
 sample.insert("Candy")
-sample.insert("candy")
 sample.insert("Cat")
-sample.insert("cart")
+sample.insert("cART")
 sample.insert("Sat")
 sample.insert("cUT")
 sample.insert("sand")
-sample.insert("camp")
 
-sample.delete("sat")
+sample.delete("cART")
 
-print("--------------------------")
-print(sample.search("Cat"))
+sample.search("Cat")
+sample.search("cat")
+sample.search("sand")
+sample.search("cone")
 
-print("--------------------------")
-sample.search("cas")
-
-print("--------------------------")
+print("\nReturn true:\n")
 print(sample.starts_with("ca"))
+print("\nReturn false:\n")
+print(sample.starts_with("cam"))
 
-print("--------------------------")
-print(sample.words_with_prefix("cA"))
-print(sample.words_with_prefix("Cu"))
+print("\nReturn a word list:\n")
+print(sample.words_with_prefix("ca"))
+print("\nReturn none:\n")
+print(sample.words_with_prefix("cam"))
 
-print("--------------------------")
-sample.word_library()
+print("\nReturn a word list:\n")
+sample.autocomplete("ca")
+print("\nReturn none:\n")
+sample.autocomplete("ba")
 
-print("--------------------------")
-sample.autocomplete("c")
+# Case with 1 word length difference
+print("\nWord with 1 word length difference:\n")
+sample.spell_check("acandy")
+print("\nWord with 1 word length difference:\n")
+sample.spell_check("canndy")
+print("\nWord with 1 word length difference:\n")
+sample.spell_check("candyy")
 
-print("--------------------------")
-sample.spell_check("cand")
+# Case with 1 character difference
+print("\nWord with 1 character difference:\n")
+sample.spell_check("mandy")
 
+# Case with 1 character order difference
+print("\nWord with 1 character order difference:\n")
+sample.spell_check("cadny")
+
+# Failure case
+print("\nFailure case:\n")
+sample.spell_check("raw")
+sample.spell_check("caaaan")
+sample.spell_check("ydnac")
+
+# Normal case
+print("\nNormal case:\n")
+sample.spell_check("cat")
+
+# Function in search(word)
+print("\nFunction in search(word):\n")
+sample.search("sad")
+print("\nFunction in search(word):\n")
+sample.search("grow")
+
+print("\n")
+print(sample.word_list)
