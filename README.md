@@ -76,8 +76,7 @@ A Trie is a tree-based data structure used to store a dynamic set of strings eff
 -  Not Found, return `False`
 - `words_with_prefix("ha")`
 -  Not found
-- `autocomplete("ha")`
--  execute `words_with_prefix("ha")`
+- `autocomplete("ha")`  -->  execute `words_with_prefix("ha")`
 -  Not Found
 - `spell_check("hurt")`
 -  scan wordlist, no similar word
