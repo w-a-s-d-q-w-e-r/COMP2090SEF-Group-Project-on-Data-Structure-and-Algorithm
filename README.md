@@ -38,11 +38,12 @@ A Trie is a tree-based data structure used to store a dynamic set of strings eff
 ### Success cases:
 - `insert("Horse")` 
 - `self.wordlist` = `{"horse" : 0}`
-- `self.root` = root.children = `"{h" : <node_h>}`            ,`root.is_end_of_word` is `False`
-- -> node_h.children = `{"o" : <node_ho>}`         ,`node_h.is_end_of_word` is `False`
+- `self.root`
+- root.children = `"{h" : <node_h>}`            ,`root.is_end_of_word` is `False`
+-  node_h.children = `{"o" : <node_ho>}`         ,`node_h.is_end_of_word` is `False`
 - ...
-- -> node_hors.children = `{"e" : <node_horse>}`   ,`node_hors.is_end_of_word` is `False`
-- -> node_horse.children = `{}`                    ,`node_horse.is_end_of_word` is `True`
+-  node_hors.children = `{"e" : <node_horse>}`   ,`node_hors.is_end_of_word` is `False`
+-  node_horse.children = `{}`                    ,`node_horse.is_end_of_word` is `True`
 - `search("Horse")`
 -  return `True`, self_wordlist = `{"horse" : 1}`
 - `delete("Horse")`
@@ -50,37 +51,37 @@ A Trie is a tree-based data structure used to store a dynamic set of strings eff
 - `starts_with("ho")`
 -  node_ho.children = `{"r" : <node_r>}`
 - ...
-- -> node_horse.children = {}, `node_horse.is_end_of_word` = `True`
-- -> return `True`
+-  node_horse.children = {}, `node_horse.is_end_of_word` = `True`
+-  return `True`
 - `words_with_prefix("ho")`
 -  node_ho.children = `{"r" : <node_r>}`
 - ...
-- -> node_horse.children = `{}`, `node_horse.is_end_of_word` = `True`
-- -> return "horse"
+-  node_horse.children = `{}`, `node_horse.is_end_of_word` = `True`
+-  return "horse"
 - `autocomplete("ho")`
-- -> `words_with_prefix("ho")`
-- -> "horse" found
-- -> suggest word "horse"
+-  `words_with_prefix("ho")`
+-  "horse" found
+-  suggest word "horse"
 - `spell_check("house")`
 -  scan wordlist, found 1 character difference between "horse" and "house"
-- -> suggest word "horse"
+-  suggest word "horse"
 ### Fail cases:  (Assume there is the word "horse")
 - `insert(123)`    *Number can't apply to `.lower()` function*
 - `search("hot")`
-- -> Not Found
-- -> execute `spell_check("hot")`
-- -> Not Found, return `False`
+-  Not Found
+-  execute `spell_check("hot")`
+-  Not Found, return `False`
 - `delete("hope")`
-- -> Not Found
+-  Not Found
 - `starts_with("ha")`
-- -> Not Found, return `False`
+-  Not Found, return `False`
 - `words_with_prefix("ha")`
-- -> Not found
+-  Not found
 - `autocomplete("ha")`
-- -> execute `words_with_prefix("ha")`
-- -> Not Found
+-  execute `words_with_prefix("ha")`
+-  Not Found
 - `spell_check("hurt")`
-- -> scan wordlist, no similar word
+-  scan wordlist, no similar word
 - return `None`
 
 ## Selected Algorithm: Tim Sort
