@@ -77,14 +77,14 @@ def tim_sort(arr):
 
     return arr
 
-def calc_min_run(n):
+def calc_min_run(n):                #[...] 200 -> 50~50~50~50
     r = 0
     while n >= 64:
         r = 1 if n % 2 == 1 else r
         n = n//2
     return n + r
 
-def count_run_and_make_ascending(arr, start, end):
+def count_run_and_make_ascending(arr, start, end):      #[2,4,6,8,10,12,7,...]
     if start >= end:
         return 1
     i = start + 1
@@ -97,7 +97,7 @@ def count_run_and_make_ascending(arr, start, end):
         arr[start:i] = reversed(arr[start:i])
     return i - start
 
-def binary_search(arr, left, right, key):
+def binary_search(arr, left, right, key):       #[...,8,9,11,...] Insert 10
     while left <= right:
         mid = (left + right) // 2
         if arr[mid] <= key:
@@ -116,7 +116,7 @@ def binary_insertion_sort(arr, left, right):            #Faster than insertion_s
             j -= 1
         arr[pos] = key
 
-def gallop(key, arr, start, end):
+def gallop(key, arr, start, end):                       #[2,3,4,5,7,8,11,12,19,...]  [1,20,21,22,...]
     if start > end:
         return start
 
@@ -142,13 +142,16 @@ def gallop(key, arr, start, end):
             right = mid - 1
     return left
 
+
     """ Create a random list and do code testing """
 import random
 number = list(range(1,1000))
 sample = random.sample(number, 200)
 print(sample)
+print("\n")
 print(sorted(sample))
+print("\n")
 print(tim_sort(sample))
+print("\n")
 print(sorted(sample) == tim_sort(sample)) 
-
 
