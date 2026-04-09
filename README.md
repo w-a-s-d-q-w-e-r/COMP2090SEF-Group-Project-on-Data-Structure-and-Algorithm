@@ -58,8 +58,7 @@ A Trie is a tree-based data structure used to store a dynamic set of strings eff
 - ...
 -  node_horse.children = `{}`, `node_horse.is_end_of_word` = `True`
 -  return "horse"
-- `autocomplete("ho")`
--  `words_with_prefix("ho")`
+- `autocomplete("ho")`  -->  execute `words_with_prefix("ho")`
 -  "horse" found
 -  suggest word "horse"
 - `spell_check("house")`
